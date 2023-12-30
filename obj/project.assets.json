@@ -2753,11 +2753,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\LENOVO\\source\\repos\\TimeTableProject\\TimeTableProject.csproj",
+      "projectUniqueName": "C:\\Users\\LENOVO\\Documents\\harsha\\Workspace\\.NET\\TimeTableProject\\TimeTableProject.csproj",
       "projectName": "TimeTableProject",
-      "projectPath": "C:\\Users\\LENOVO\\source\\repos\\TimeTableProject\\TimeTableProject.csproj",
+      "projectPath": "C:\\Users\\LENOVO\\Documents\\harsha\\Workspace\\.NET\\TimeTableProject\\TimeTableProject.csproj",
       "packagesPath": "C:\\Users\\LENOVO\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\LENOVO\\source\\repos\\TimeTableProject\\obj\\",
+      "outputPath": "C:\\Users\\LENOVO\\Documents\\harsha\\Workspace\\.NET\\TimeTableProject\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\LENOVO\\AppData\\Roaming\\NuGet\\NuGet.Config",

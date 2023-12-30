@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
+using System.Text.Json;
 using TimeTableProject.Dto;
 using TimeTableProject.Entities;
 using TimeTableProject.Services;
@@ -18,15 +19,24 @@ namespace TimeTableProject.Controllers
             _timeTableService = timeTableService;
         }
 
-        [HttpGet("get")]
-        public async Task<ActionResult<IEnumerable<TimeTable>>> GetTimeTables() {
-            return Ok(await _timeTableService.GetTimeTableDetails());
+        [HttpPost("add")]
+        public ActionResult<SuccessResponse> AddDetails([FromBody] ScheduleDetails scheduleDetails) {
+            return Ok(_timeTableService.AddTimeTableDetails(scheduleDetails));
         }
 
-        [HttpPost("add")]
-        public async Task<ActionResult<Response>> AddDetails([FromBody] TimeTableDto timeTableDto) {
-            return Ok(await _timeTableService.AddTimeTableDetails(timeTableDto));
+        [HttpGet("get/all-response-ids")]
+        public ActionResult<List<Guid>> GetAllResponses()
+        {
+            return Ok(_timeTableService.GetAllResponses());
         }
-        
+
+        [HttpGet("get/{referenceId}")]
+        public ActionResult<Response> GetTimeTables(Guid referenceId)
+        {
+            Response response = JsonSerializer.Deserialize<Response>(_timeTableService.GetTimeTableDetails(referenceId));
+            
+            return Ok(response);
+        }
+
     }
 }
