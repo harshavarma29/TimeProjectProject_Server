@@ -16,7 +16,7 @@ namespace TimeTableProject.Services
         }
 
         public string GetTimeTableDetails(Guid referenceId) {
-            //learning
+            //learning pull requests
             return _dataContext
                 .Responses.Where(responses => responses.ReferenceId == referenceId)
                 .FirstOrDefault()
